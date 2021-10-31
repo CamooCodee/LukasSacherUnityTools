@@ -1,4 +1,5 @@
-﻿using static System.IO.Path;
+﻿#if UNITY_EDITOR
+using static System.IO.Path;
 using static System.IO.Directory;
 using static UnityEngine.Application;
 
@@ -16,3 +17,4 @@ namespace lukassacher.UnityTools
         }
     }
 }
+#endif

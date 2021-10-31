@@ -32,7 +32,8 @@ namespace lukassacher.UnityTools
             {
                 types.AddRange(
                     assembly.GetTypes()
-                        .Where(t => t.IsSubclassOf(typeof(MonoBehaviour)) && !t.Namespace.StartsWith("Unity")));
+                        .Where(t => t.IsSubclassOf(typeof(MonoBehaviour)) &&
+                                    (t.Namespace == null || !t.Namespace.StartsWith("Unity"))));
             }
             
             foreach (var type in types)
@@ -76,7 +77,7 @@ namespace lukassacher.UnityTools
                 types.AddRange(
                     assembly.GetTypes()
                         .Where(t => t.IsSubclassOf(typeof(MonoBehaviour)) &&
-                                    !t.Namespace.StartsWith("Unity") &&
+                                    (t.Namespace == null || !t.Namespace.StartsWith("Unity")) &&
                                     t.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).Any(f => f.GetCustomAttributes(typeof(AcceptOnlyAttribute), false).Length > 0)));
             }
 

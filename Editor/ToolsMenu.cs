@@ -1,4 +1,4 @@
-using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using static UnityEditor.AssetDatabase;
@@ -52,3 +52,4 @@ namespace lukassacher.UnityTools
         private static void AddCinemachine() => InstallUnityPackage("cinemachine");
     }
 }
+#endif

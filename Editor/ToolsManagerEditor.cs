@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using static lukassacher.UnityTools.lukassacher_EditorUtility;
@@ -45,3 +46,4 @@ namespace lukassacher.UnityTools
         }
     }
 }
+#endif

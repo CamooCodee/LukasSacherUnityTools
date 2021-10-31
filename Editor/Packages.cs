@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿#if UNITY_EDITOR
+using System.Net.Http;
 using System.Threading.Tasks;
 using static System.IO.File;
 using static System.IO.Path;
@@ -38,3 +39,4 @@ namespace lukassacher.UnityTools
         private static string GetManifestPath() => Combine(dataPath, "../Packages/manifest.json");
     }
 }
+#endif
